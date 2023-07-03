@@ -1,3 +1,5 @@
+vim.keymap.set('n', '<leader>hrr', ':PackerSync<CR>')
+
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -17,6 +19,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'projekt0n/github-nvim-theme'
   use 'nvim-tree/nvim-tree.lua'
+  use 'terrortylor/nvim-comment'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
