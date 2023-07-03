@@ -29,9 +29,10 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    'nvim-telescope/telescope-file-browser.nvim',
+    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   }
+  use 'nvim-telescope/telescope-project.nvim'
   use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'williamboman/mason.nvim'
   use 'neovim/nvim-lspconfig'
