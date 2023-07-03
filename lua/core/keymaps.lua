@@ -16,8 +16,10 @@ vim.opt.expandtab = true
 vim.wo.relativenumber = true
 
 vim.keymap.set('n', '<leader>/', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>bk', ':bw<CR>')
-vim.keymap.set('n', '<leader>bK', ':qa<CR>')
+
+-- Closing buffers
+vim.keymap.set('n', '<leader>bk', ':bw!<CR>')
+vim.keymap.set('n', '<leader>bK', ':qa!<CR>')
 
 -- Windows
 vim.keymap.set('n', '<leader>ws', ':split<CR>')

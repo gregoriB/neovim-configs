@@ -1,6 +1,6 @@
 local neogit = require('neogit')
 
-vim.keymap.set('n', '<Space>gg', neogit.open, {})
+vim.keymap.set('n', '<leader>gg', neogit.open, {})
 
 neogit.setup {
   disable_signs = false,
