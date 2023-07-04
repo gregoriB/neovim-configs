@@ -14,6 +14,10 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 
 vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'
+
+vim.keymap.set('i', '<C-H>', '<escape>diwi')
+vim.keymap.set('n', '<C-H>', 'diw')
 
 vim.keymap.set('n', '<leader>/', ':nohlsearch<CR>')
 vim.keymap.set('n', 'lua require("startup").new_file()', '<leader>+')

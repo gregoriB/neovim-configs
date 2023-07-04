@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'terrortylor/nvim-comment'
   use 'nvim-tree/nvim-web-devicons'
+  use 'tpope/vim-surround'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'mfussenegger/nvim-dap'
