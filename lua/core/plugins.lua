@@ -15,6 +15,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'
   use 'hrsh7th/nvim-cmp'
   use { 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' }
   use 'projekt0n/github-nvim-theme'
@@ -23,13 +24,12 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-lua/plenary.nvim'
   use 'mfussenegger/nvim-dap'
-  use 'simrat39/rust-tools.nvim'
+  use 'rcarriga/nvim-dap-ui'
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = 'nvim-lua/plenary.nvim'
   }
   use {
     'nvim-telescope/telescope-file-browser.nvim',
@@ -39,8 +39,9 @@ return require('packer').startup(function(use)
   use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'williamboman/mason.nvim'
   use 'neovim/nvim-lspconfig'
+  use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
   use 'williamboman/mason-lspconfig.nvim'
-  use 'glepnir/lspsaga.nvim'
+  use { 'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
   use {
     'startup-nvim/startup.nvim',
     requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'}
