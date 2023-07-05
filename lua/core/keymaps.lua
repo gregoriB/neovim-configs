@@ -16,8 +16,7 @@ vim.opt.expandtab = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'
 
-vim.keymap.set('i', '<C-H>', '<escape>dbi')
-vim.keymap.set('n', '<C-H>', 'db')
+vim.keymap.set('i', '<C-H>', '<C-W>', { noremap = true })
 
 vim.keymap.set('n', '<leader>/', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>bn', ':tabnew<CR>')
