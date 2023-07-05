@@ -16,17 +16,38 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'hrsh7th/nvim-cmp'
-  use { 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' }
+
+  -- Style
   use 'projekt0n/github-nvim-theme'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'terrortylor/nvim-comment'
   use 'nvim-tree/nvim-web-devicons'
-  use 'tpope/vim-surround'
+  use {
+    'startup-nvim/startup.nvim',
+    requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'}
+  }
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+
+  -- Vim
+  use 'terrortylor/nvim-comment'
+  use 'tpope/vim-surround'
+
+  -- Rust
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
+  use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
+
+  -- Completion
+  use 'hrsh7th/nvim-cmp'
+  use { 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' }
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'williamboman/mason.nvim'
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason-lspconfig.nvim'
+  use { 'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
+
+  -- Directory
+  use 'nvim-tree/nvim-tree.lua'
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
@@ -37,16 +58,9 @@ return require('packer').startup(function(use)
     requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   }
   use 'nvim-telescope/telescope-project.nvim'
+
+  -- Git
   use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
-  use 'williamboman/mason.nvim'
-  use 'neovim/nvim-lspconfig'
-  use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
-  use 'williamboman/mason-lspconfig.nvim'
-  use { 'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
-  use {
-    'startup-nvim/startup.nvim',
-    requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'}
-  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
