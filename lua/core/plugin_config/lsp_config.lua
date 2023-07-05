@@ -7,7 +7,7 @@ require('lspsaga').setup({
   symbol_in_winbar = {
     in_custom = false,
     enable = true,
-    separator = ' ',
+    separator = ' > ',
     show_file = true,
     file_formatter = ""
   },

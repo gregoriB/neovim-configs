@@ -31,11 +31,10 @@ local settings = {
         title = "Basic Commands",
         margin = 5,
         content = {
-            { "📄  New File", "lua require'startup'.new_file()", "space +" },
             { "🔍  Find File", "Telescope find_files", "space space" },
             { "🔬  Find Word", "Telescope live_grep", "space f p" },
             { "⏳  Recent Files", "Telescope oldfiles", "space enter" },
-            { "🔭  Browse all files", "Telescope file_browser", "space ." },
+            { "🔭  Browse All Files", "Telescope file_browser", "space ." },
             { "📁  Projects", "Telescope project", "space tab" },
         },
         highlight = "String",
