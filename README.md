@@ -1,11 +1,5 @@
 #### Neovim config
 
-<div style="text-align: center; width: 100%;">
-    <div style='margin: 0 auto; width: 700px'  >
-        <img src="https://raw.githubusercontent.com/gregoriB/neovim-configs/master/Shared/neovim_startup.png" alt="startup screen"/>
-    </div>
-</div>
-
 ### Setup
 
 Install to the Neovim config folder, usually at `~/.configs/nvim/`
