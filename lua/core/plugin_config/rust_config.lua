@@ -20,6 +20,9 @@ rt.setup({
     end,
   },
   tools = {
+    inlay_hints = { 
+      only_current_line = true,
+    },
     hover_actions = {
       auto_focus = true,
     },

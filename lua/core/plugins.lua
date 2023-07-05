@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   -- Vim
   use 'terrortylor/nvim-comment'
   use 'tpope/vim-surround'
+  use 'windwp/nvim-autopairs'
 
   -- Rust
   use 'mfussenegger/nvim-dap'
