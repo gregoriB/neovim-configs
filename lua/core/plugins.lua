@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
+  use {
+      'rust-lang/rust.vim',
+      ft = { "rust" },
+  }
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
