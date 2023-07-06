@@ -10,7 +10,7 @@ neogit.setup {
   disable_insert_on_commit = false,
   -- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size.
   -- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
-  auto_refresh = false,
+  auto_refresh = true,
   -- Value used for `--sort` option for `git branch` command
   -- By default, branches will be sorted by commit date descending
   -- Flag description: https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---sortltkeygt

@@ -24,7 +24,7 @@ rt.setup({
       only_current_line = true,
     },
     hover_actions = {
-      auto_focus = true,
+      -- auto_focus = true,
     },
   },
 })
