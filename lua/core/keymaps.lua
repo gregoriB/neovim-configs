@@ -13,8 +13,9 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
-vim.wo.relativenumber = true
-vim.wo.signcolumn = 'yes'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
 
 vim.keymap.set('i', '<C-H>', '<C-W>', { noremap = true })
 

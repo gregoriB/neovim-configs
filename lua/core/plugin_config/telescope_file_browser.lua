@@ -3,15 +3,16 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 require("telescope").setup {
   extensions = {
     file_browser = {
+      hidden = true,
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
-          ["+"] = fb_actions.create,
-          ["R"] = fb_actions.rename,
-          ["C"] = fb_actions.copy,
-          ["X"] = fb_actions.remove,
+          ["<C-+>"] = fb_actions.create,
+          ["<C-R>"] = fb_actions.rename,
+          ["<C-C>"] = fb_actions.copy,
+          ["<C-X>"] = fb_actions.remove,
         },
         ["n"] = {
           -- your custom normal mode mappings
@@ -28,7 +29,7 @@ require("telescope").setup {
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>,",
+  "<leader>>",
   ":Telescope file_browser<CR>",
   { noremap = true }
 )
