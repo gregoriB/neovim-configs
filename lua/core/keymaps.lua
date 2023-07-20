@@ -19,12 +19,14 @@ vim.opt.signcolumn = 'yes'
 
 vim.keymap.set('i', '<C-H>', '<C-W>', { noremap = true })
 
-vim.keymap.set('n', '<leader>/', ':nohlsearch<CR>')
+vim.keymap.set('n', '<escape>', ':nohlsearch<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>bn', ':tabnew<CR>')
 
 -- Closing buffers
 vim.keymap.set('n', '<leader>bk', ':bw!<CR>')
 vim.keymap.set('n', '<leader>bK', ':qa!<CR>')
+vim.keymap.set('n', '<leader>q!', ':qa!<CR>')
+vim.keymap.set('n', '<leader>Q', ':qa!<CR>')
 
 -- Windows
 vim.keymap.set('n', '<leader>ws', ':split<CR>')
