@@ -69,7 +69,14 @@ return require('packer').startup(function(use)
   use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
-
+  use {
+      "kdheepak/lazygit.nvim",
+      -- optional for floating window border decoration
+      requires = {
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim",
+      },
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
