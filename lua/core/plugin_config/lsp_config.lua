@@ -1,10 +1,4 @@
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    'lua_ls',
-    'pyright',
-    'tsserver'
-  }
-})
+require("mason-lspconfig").setup()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -36,24 +30,5 @@ vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
 vim.keymap.set({"n", "t"}, "<S-CR>", ":Lspsaga term_toggle<CR>", { silent = true })
 
-
 require("lspconfig").lua_ls.setup({})
-
 require("lspconfig").tsserver.setup({})
-
--- require("lspconfig").lua_ls.setup {
---   capabilities = capabilities,
---   settings = {
---     Lua = {
---       diagnostics = {
---         globals = { "vim" },
---       },
---       workspace = {
---         library = {
---           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
---           [vim.fn.stdpath "config" .. "/lua"] = true,
---         },
---       },
---     },
---   }
--- }

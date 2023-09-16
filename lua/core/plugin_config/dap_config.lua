@@ -14,5 +14,6 @@ end
 
 vim.keymap.set("n", "<leader>db", ':DapToggleBreakpoint<CR>')
 vim.keymap.set("n", "<leader>dx", ':DapTerminate<CR>')
-vim.keymap.set("n", "<leader>dl", ':DapStepOver<CR>')
+vim.keymap.set("n", "<leader>dq", ':DapTerminate<CR>')
+vim.keymap.set("n", "<leader>ds", ':DapStepOver<CR>')
 vim.keymap.set("n", "<leader>d<CR>", ':DapStepOver<CR>')

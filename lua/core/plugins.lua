@@ -78,6 +78,13 @@ return require('packer').startup(function(use)
       'notjedi/nvim-rooter.lua',
       config = function() require'nvim-rooter'.setup() end
   }
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = { "kkharji/sqlite.lua" },
+  }
+  use 'nvim-telescope/telescope-ui-select.nvim'
+  use 'nvim-telescope/telescope-dap.nvim'
+  -- use 'nvim-telescope/telescope-vimspector.nvim'
 
   -- Git
   use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
