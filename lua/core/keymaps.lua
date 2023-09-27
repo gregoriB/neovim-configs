@@ -42,3 +42,7 @@ vim.keymap.set('n', '<leader>wj', ':wincmd j<CR>')
 -- Git
 vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', {})
 -- vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
+
+-- Formatting
+local saveAndFormatCmd = 'lua vim.lsp.buf.format()'
+-- vim.api.nvim_create_autocmd("BufWritePre", { command = saveAndFormatCmd })

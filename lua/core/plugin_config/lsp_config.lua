@@ -1,4 +1,17 @@
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  -- ensure_installed = {
+  --   'gopls',
+  --   'golines',
+  --   'goimports',
+  --   'eslint-lsp',
+  --   'lua-language-server',
+  --   'pyright',
+  --   'python-lsp-server',
+  --   'rust-analyzer',
+  --   'typescript-language-server',
+  -- },
+  automatic_installation = true,
+})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -32,3 +45,14 @@ vim.keymap.set({"n", "t"}, "<S-CR>", ":Lspsaga term_toggle<CR>", { silent = true
 
 require("lspconfig").lua_ls.setup({})
 require("lspconfig").tsserver.setup({})
+require("lspconfig").gopls.setup({
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      }
+    }
+  }
+})
