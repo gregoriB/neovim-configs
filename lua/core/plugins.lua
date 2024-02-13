@@ -34,6 +34,13 @@ return require('packer').startup(function(use)
   use 'gelguy/wilder.nvim'
 
   -- Dap
+  use { 
+    'jay-babu/mason-nvim-dap.nvim',
+    requires = {
+      'williamboman/mason.nvim',
+      'mfussenegger/nvim-dap',
+    }
+  }
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
 
@@ -47,6 +54,9 @@ return require('packer').startup(function(use)
   -- Go
   use { 'leoluz/nvim-dap-go', requires = ' mfussenegger/nvim-dap' }
 
+  -- Java
+  use { 'mfussenegger/nvim-jdtls' }
+ 
   -- Completion
   use 'hrsh7th/nvim-cmp'
   use { 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' }
@@ -92,7 +102,14 @@ return require('packer').startup(function(use)
   -- use 'nvim-telescope/telescope-vimspector.nvim'
 
   -- Git
-  use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 
+    'NeogitOrg/neogit', 
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+      'nvim-telescope/telescope.nvim'
+    }
+  }
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'
   use {

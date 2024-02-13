@@ -1,15 +1,19 @@
 require("mason-lspconfig").setup({
-  -- ensure_installed = {
-  --   'gopls',
-  --   'golines',
-  --   'goimports',
-  --   'eslint-lsp',
-  --   'lua-language-server',
-  --   'pyright',
-  --   'python-lsp-server',
-  --   'rust-analyzer',
-  --   'typescript-language-server',
-  -- },
+  ensure_installed = {
+    'jdtls',
+    'gopls',
+    'golines',
+    'goimports',
+    'eslint-lsp',
+    'lua-language-server',
+    'pyright',
+    'python-lsp-server',
+    'rust-analyzer',
+    'typescript-language-server',
+    'codelldb',
+    'clang-format',
+    'clangd',
+  },
   automatic_installation = true,
 })
 
@@ -37,14 +41,16 @@ require('lspsaga').setup({
 })
 
 vim.keymap.set("n", "<leader>mf", ":Lspsaga lsp_finder<CR>", { silent = true })
-vim.keymap.set('n', '<leader>K', ':Lspsaga hover_doc<CR>', { silent = true })
+vim.keymap.set('n', '<leader><A-k>', ':Lspsaga hover_doc<CR>', { silent = true })
 vim.keymap.set("n", "<leader>mr", ":Lspsaga rename<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
-vim.keymap.set({"n", "t"}, "<S-CR>", ":Lspsaga term_toggle<CR>", { silent = true })
+vim.keymap.set({"n", "t"}, "<A-CR>", ":Lspsaga term_toggle<CR>", { silent = true })
 
 require("lspconfig").lua_ls.setup({})
 require("lspconfig").tsserver.setup({})
+require("lspconfig").jdtls.setup({})
+require("lspconfig").clangd.setup({})
 require("lspconfig").gopls.setup({
   settings = {
     gopls = {

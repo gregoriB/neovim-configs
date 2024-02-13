@@ -67,11 +67,11 @@ neogit.setup {
   },
   -- Setting any section to `false` will make the section not render at all
   -- override/add mappings
-  mappings = {
+  --mappings = {
     -- modify status buffer mappings
-    status = {
+    --status = {
       -- Adds a mapping with "B" as key that does the "BranchPopup" command
-      ["B"] = "BranchPopup",
-    }
-  }
+      --["B"] = "BranchPopup",
+    --}
+  --}
 }

@@ -1,6 +1,30 @@
 require("dapui").setup()
 
-local dap, dapui, dapgo = require("dap"), require("dapui"), require('dap-go')
+local dap = require("dap")
+local dapui, dapgo = require("dapui"), require('dap-go')
+
+dap.adapters.codelldb = {
+  type = "server",
+  port = 13000,
+  executable = {
+    command = vim.fn.expand('~/.local/share/nvim/mason/bin/codelldb'),
+    args = { "--port", "13000" },
+  },
+}
+
+dap.configurations.c = {
+  {
+    type = "codelldb",
+    request = "launch",
+    program = function()
+        return vim.fn.input('Path to executable: ', vim.fn.getcwd()..'/main', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+  }
+}
+
+dap.configurations.cpp = dap.configurations.c
 
 local function widgets()
   local widgets = require('dap.ui.widgets');

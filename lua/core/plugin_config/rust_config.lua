@@ -10,7 +10,8 @@ vim.g.rustfmt_autosave = 1
 
 rt.setup({
   dap = {
-    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+    -- adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+    adapter = require("rust-tools.dap"),
   },
   server = {
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
