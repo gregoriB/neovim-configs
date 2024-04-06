@@ -50,6 +50,17 @@ return require('packer').startup(function(use)
     } ,
   }
 
+  -- Xcode
+  -- use {
+  --   'xbase-lab/xbase',
+  --   run = 'make install', -- or "make install && make free_space"
+  --   requires = {
+  --     "neovim/nvim-lspconfig",
+  --     "nvim-telescope/telescope.nvim", -- optional
+  --     "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
+  --   },
+  -- }
+
   -- Rust
   use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
   use {
