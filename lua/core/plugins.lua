@@ -42,7 +42,13 @@ return require('packer').startup(function(use)
     }
   }
   use 'mfussenegger/nvim-dap'
-  use 'rcarriga/nvim-dap-ui'
+  use {
+    'rcarriga/nvim-dap-ui',
+    requires = { 
+      'mfussenegger/nvim-dap', 
+      'nvim-neotest/nvim-nio' 
+    } ,
+  }
 
   -- Rust
   use { 'simrat39/rust-tools.nvim', requires = 'neovim/nvim-lspconfig' }
@@ -52,7 +58,7 @@ return require('packer').startup(function(use)
   }
 
   -- Go
-  use { 'leoluz/nvim-dap-go', requires = ' mfussenegger/nvim-dap' }
+  use { 'leoluz/nvim-dap-go', requires = 'mfussenegger/nvim-dap' }
 
   -- Java
   use { 'mfussenegger/nvim-jdtls' }
