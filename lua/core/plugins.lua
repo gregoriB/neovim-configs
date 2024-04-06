@@ -99,12 +99,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   }
   use 'nvim-telescope/telescope-project.nvim'
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = {
-      { "nvim-telescope/telescope-live-grep-args.nvim" },
-    }
-  }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'notjedi/nvim-rooter.lua',
