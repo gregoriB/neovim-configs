@@ -9,6 +9,7 @@ vim.opt.cursorline = true
 vim.opt.autoread = true
 vim.opt.swapfile = false
 vim.opt.ignorecase = true
+vim.opt.wrap = true
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

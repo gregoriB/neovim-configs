@@ -33,6 +33,11 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'gelguy/wilder.nvim'
 
+  -- Tasks
+  use 'stevearc/overseer.nvim'
+  use 'shatur/neovim-tasks'
+  use 'Civitasv/cmake-tools.nvim'
+
   -- Dap
   use { 
     'jay-babu/mason-nvim-dap.nvim',
