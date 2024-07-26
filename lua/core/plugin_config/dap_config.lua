@@ -1,7 +1,5 @@
-require("dapui").setup()
-
 local dap = require("dap")
-local dapui, dapgo = require("dapui"), require('dap-go')
+local dapui = require("dapui")
 
 dap.adapters.codelldb = {
   type = "server",
@@ -26,15 +24,58 @@ dap.configurations.c = {
 
 dap.configurations.cpp = dap.configurations.c
 
+dap.adapters.delve = {
+  type = 'server',
+  port = 38697,
+  executable = {
+    command = 'dlv',
+    args = {'dap', '-l', '127.0.0.1:38697'},
+  }
+}
+
+dap.adapters.go = {
+  type = 'executable';
+  command = 'node';
+  args = {os.getenv('HOME') .. '/vscode-go/extension/dist/debugAdapter.js'};
+}
+
+local function filtered_pick_process()
+  local opts = {}
+  vim.ui.input(
+    { prompt = "Search by process name (lua pattern), or hit enter to select from the process list: " },
+    function(input)
+      opts["filter"] = input or ""
+    end
+  )
+  return require("dap.utils").pick_process(opts)
+end
+
+local function get_debug_process_id()
+    local pid = vim.fn.system("pidof 'debugapp'")
+    if tonumber(pid) == nil then
+        return require("dap.utils").pick_process()
+    else
+        return tonumber(pid)
+    end
+end
+
+dap.configurations.go = {
+    {
+        type = "delve",
+        name = "Attach",
+        request = "attach",
+        mode = "local",
+        processId = get_debug_process_id
+    }
+}
+
 local function widgets()
   local widgets = require('dap.ui.widgets');
   local sidebar = widgets.sidebar(widgets.scopes);
   sidebar.open();
 end
 
-dapgo.setup({
-  plugin = true
-})
+dapui.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()

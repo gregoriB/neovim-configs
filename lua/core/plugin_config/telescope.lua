@@ -29,7 +29,7 @@ telescope.setup{
     buffers = {
       sort_mru = true,
       ignore_current_buffer = true,
- j  },
+   },
     current_buffer_fuzzy_find = {
       previewer = false
     }
@@ -41,6 +41,9 @@ telescope.setup{
       override_file_sorter = true,     -- override the file sorter
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case". the default case_mode is "smart_case"
     },
+    ["ui-select"] = {
+        require("telescope.themes").get_dropdown{}
+    }
   }
 }
 
@@ -52,9 +55,6 @@ require('telescope').load_extension('fzf')
 require("telescope").load_extension('frecency')
 -- Select UI options using telescope, eg code action
 require("telescope").load_extension('ui-select')
--- nvim-dap telescope integration
-require("telescope").load_extension('dap')
--- require("telescope").load_extension('vimspector')
 -- Nice workspace selector
 require("telescope").load_extension('project')
 

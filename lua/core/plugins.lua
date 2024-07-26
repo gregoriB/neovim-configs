@@ -85,9 +85,15 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'williamboman/mason.nvim'
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    requires = { 
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim",
+    }
+  }
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason-lspconfig.nvim'
-  use { 'glepnir/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
+  use { 'nvimdev/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
 
   -- Directory
   use 'nvim-tree/nvim-tree.lua'
@@ -114,8 +120,6 @@ return require('packer').startup(function(use)
     requires = { "kkharji/sqlite.lua" },
   }
   use 'nvim-telescope/telescope-ui-select.nvim'
-  use 'nvim-telescope/telescope-dap.nvim'
-  -- use 'nvim-telescope/telescope-vimspector.nvim'
 
   -- Git
   use { 

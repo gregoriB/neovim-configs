@@ -1,3 +1,4 @@
+require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     -- 'jdtls',
@@ -14,10 +15,11 @@ require("mason-lspconfig").setup({
     -- 'clang-format',
     -- 'clangd',
   },
-  automatic_installation = true,
+  -- automatic_installation = true,
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspsaga').setup({
   -- code_action_icon = "💡",
@@ -37,7 +39,7 @@ require('lspsaga').setup({
   },
   hover = {
     open_link = 'O',
-  }
+  },
 })
 
 vim.keymap.set("n", "<leader>mf", ":Lspsaga lsp_finder<CR>", { silent = true })
@@ -47,14 +49,21 @@ vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ma", ":Lspsaga code_action<CR>", { silent = true })
 vim.keymap.set({"n", "t"}, "<A-CR>", ":Lspsaga term_toggle<CR>", { silent = true })
 
-require("lspconfig").lua_ls.setup({})
-require("lspconfig").tsserver.setup({})
-require("lspconfig").jdtls.setup({})
-require("lspconfig").clangd.setup({})
+require("lspconfig").lua_ls.setup({
+  capabilities = capabilities,
+})
+require("lspconfig").tsserver.setup({
+  capabilities = capabilities,
+})
+-- require("lspconfig").jdtls.setup({})
+require("lspconfig").clangd.setup({
+  capabilities = capabilities,
+})
 require("lspconfig").gopls.setup({
+  capabilities = capabilities,
   settings = {
     gopls = {
-      completeUnimported = true,
+      completeUnimported = false,
       usePlaceholders = true,
       analyses = {
         unusedparams = true,
