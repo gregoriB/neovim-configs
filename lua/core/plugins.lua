@@ -94,6 +94,14 @@ return require('packer').startup(function(use)
   }
   use 'neovim/nvim-lspconfig'
   use { 'nvimdev/lspsaga.nvim', requires = 'neovim/nvim-lspconfig' }
+  use {
+    "cuducos/yaml.nvim",
+    ft = { "yaml" },
+    requires = {
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-telescope/telescope.nvim"
+    },
+  }
 
   -- Directory
   use 'nvim-tree/nvim-tree.lua'
@@ -128,7 +136,8 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim',
       'nvim-telescope/telescope.nvim'
-    }
+    },
+    -- commit = '3e44062d164d11848a1663831e4366b86ef6d889'
   }
   use 'lewis6991/gitsigns.nvim'
   use 'tpope/vim-fugitive'

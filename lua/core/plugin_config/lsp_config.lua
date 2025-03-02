@@ -13,6 +13,7 @@ require("mason").setup({
         'codelldb',
         'clang-format',
         'clangd',
+        'neocmakelsp'
     },
     automatic_installation = true,
 })
@@ -52,13 +53,20 @@ vim.keymap.set({ "n", "t" }, "<A-CR>", ":Lspsaga term_toggle<CR>", { silent = tr
 require("lspconfig").lua_ls.setup({
     capabilities = capabilities,
 })
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
     capabilities = capabilities,
 })
 -- require("lspconfig").jdtls.setup({})
 require("lspconfig").clangd.setup({
     capabilities = capabilities,
+    cmd = { "clangd", "--background-index", "--compile-commands-dir=build", "--log=verbose" },
+    root_dir = require("lspconfig").util.root_pattern("compile_commands.json", ".git"),
+    filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
 })
+require("lspconfig").neocmake.setup({
+    capabilities = capabilities,
+});
+
 require("lspconfig").gopls.setup({
     capabilities = capabilities,
     settings = {
@@ -71,3 +79,4 @@ require("lspconfig").gopls.setup({
         }
     },
 })
+

@@ -40,6 +40,13 @@ vim.keymap.set('n', '<leader>wk', ':wincmd k<CR>')
 vim.keymap.set('n', '<leader>wh', ':wincmd h<CR>')
 vim.keymap.set('n', '<leader>wj', ':wincmd j<CR>')
 
+vim.keymap.set('n', '<C-z>', '<Nop>', { silent = true })
+vim.keymap.set('i', '<C-z>', '<Nop>', { silent = true })
+vim.keymap.set('v', '<C-z>', '<Nop>', { silent = true })
+vim.keymap.set('n', '<C-S-z>', '<Nop>', { silent = true })
+vim.keymap.set('i', '<C-S-z>', '<Nop>', { silent = true })
+vim.keymap.set('v', '<C-S-z>', '<Nop>', { silent = true })
+
 -- Git
 vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', {})
 -- vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
